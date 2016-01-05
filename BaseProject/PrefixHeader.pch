@@ -1,0 +1,47 @@
+//
+//  PrefixHeader.pch
+//  BaseProject
+//
+//  Created by 孙伟 on 15/12/25.
+//  Copyright © 2015年 sunwei. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "AppDelegate.h"
+
+//集成CocoaLumberjack:取代NSLog
+#import <CocoaLumberjack.h>
+//定义当前打印的 打印等级
+#ifdef DEBUG //当前是调试模式
+static const int ddLogLevel = DDLogLevelVerbose;
+#else //已上架模式
+static const int ddLogLevel = DDLogLevelError;
+#endif
+
+//只要有网络操作
+#import <AFNetworking.h>
+#import <UIKit+AFNetworking.h>
+
+//可选
+//#import <SDImageCache.h>
+
+//头部刷新
+//#import <MJRefresh.h>
+#import "UIScrollView+Refresh.h"
+#import "NSObject+HUD.h"
+
+//按照功能需求，可选
+//#import <FMDB.h>
+//#import <CocoaAsyncSocket.h>
+//......
+
+#import <Masonry.h>
+#import <BlocksKit.h>
+#import <BlocksKit+UIKit.h>
+
+#endif /* PrefixHeader_pch */
